@@ -160,7 +160,19 @@ ul.internal-links {
   }
 }
 
+.section.service {
+  .page-description {
+    font-weight: 400;
+    font-size: 2rem;
+  }
+}
 @media only screen and (max-width: 767px) {
+  .section.service {
+    .page-description {
+      font-size: 1.6rem;
+      text-align: justify;
+    }
+  }
   .services-page {
     .page-introduction {
       margin-bottom: 0;
