@@ -229,3 +229,19 @@ h2,
 .policies-details {
   padding: 30px 0 50px;
 }
+
+.back-to-top {
+  width: 100%;
+  text-align: right;
+  display: inline-block;
+  span {
+    margin-left: 5px;
+    display: inline-block;
+    &:after {
+      content: "\f077";
+      color: var(--ired);
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+    }
+  }
+}

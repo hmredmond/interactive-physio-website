@@ -16,6 +16,7 @@ export default class Services extends Component {
           keywords={data.allContentfulPages.nodes[0].seo.keywords}
           description={data.allContentfulPages.nodes[0].seo.description}
         />
+        <span id="services-top"></span>
         <Banner
           data={data.contentfulAboutMe}
           site={data.contentfulSiteInformation}
@@ -31,10 +32,25 @@ export default class Services extends Component {
                   .html,
             }}
           />
+
+          <section>
+            <ul className="internal-links">
+              {data.allContentfulService.edges.map((item, index) => {
+                const ref = item.node.title.split(" ").join("_");
+                return (
+                  <li key={ref}>
+                    <a href={"#" + ref}>{item.node.title}</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+
           {data.allContentfulService.edges.map((item, index) => {
             const ref = item.node.title.split(" ").join("_");
             return (
-              <section key={ref} id={ref}>
+              <section key={ref}>
+                <span id={ref} className="link-anchor"></span>
                 <h2>
                   {item.node.title.split(" ").map((item, index) => {
                     return <span key={item + "-" + index}>{item}</span>;
@@ -46,6 +62,9 @@ export default class Services extends Component {
                     __html: item.node.description.childMarkdownRemark.html,
                   }}
                 />
+                <a href="#services-top" className="back-to-top">
+                  Back to top<span></span>
+                </a>
                 {index !== data.allContentfulService.edges.length - 1 && (
                   <span className="divider"></span>
                 )}

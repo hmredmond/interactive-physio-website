@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 import classNames from "classnames";
 
 export default class service extends Component {
@@ -23,14 +25,15 @@ export default class service extends Component {
 
                 return (
                   <div key={item + "-" + index} className="row-item">
-                    <a
-                      href={"/services#" + item.node.title.split(" ").join("_")}
+                    <AnchorLink
+                      to={"/services#" + item.node.title.split(" ").join("_")}
                       className="overlay-link"
                     >
                       <span className="sr-only">
                         {item.node.title.split(" ").join("_")}
                       </span>
-                    </a>
+                    </AnchorLink>
+
                     <div
                       className={classNames("service-main", {
                         "professional-service": isProfessional,
