@@ -9,7 +9,7 @@ import Footer from "./footer";
 import "../scss/style.scss";
 
 if (typeof window !== "undefined") {
-  require("smooth-scroll")('a[href*="#"]');
+  // require("smooth-scroll")('a[href*="#"]');
 }
 
 const Layout = ({ children, header }) => (
