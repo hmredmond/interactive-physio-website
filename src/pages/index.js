@@ -102,7 +102,7 @@ const IndexPage = ({ data }) => (
           <div key="pricing-section">
             <Pricing data={data.allContentfulPricing}></Pricing>
             <div className="see-more clearfix">
-              <a href="/services#pricing">
+              <a href="/services#Treatment_Options">
                 <span>More Details</span>
               </a>
             </div>
