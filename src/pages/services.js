@@ -34,7 +34,8 @@ export default class Services extends Component {
           {data.allContentfulService.edges.map((item, index) => {
             const ref = item.node.title.split(" ").join("_");
             return (
-              <section key={ref} id={ref}>
+              <section key={ref}>
+                <span id={ref} className="link-anchor"></span>
                 <h2>
                   {item.node.title.split(" ").map((item, index) => {
                     return <span key={item + "-" + index}>{item}</span>;

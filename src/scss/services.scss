@@ -95,6 +95,7 @@
     font-size: 3.2rem;
     border-bottom: 3px var(--ired) solid;
     padding-bottom: 15px;
+
     span {
       padding-right: 5px;
       flex: 1;
@@ -110,4 +111,9 @@
   section {
     margin-bottom: 30px;
   }
+}
+
+.link-anchor {
+  position: relative;
+  top: -75px;
 }
