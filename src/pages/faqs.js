@@ -15,6 +15,7 @@ export default class FAQs extends Component {
           keywords={data.allContentfulPages.nodes[0].seo.keywords}
           description={data.allContentfulPages.nodes[0].seo.description}
         />
+        <span id="faq-top"></span>
         <Banner
           data={data.contentfulAboutMe}
           site={data.contentfulSiteInformation}
@@ -53,7 +54,8 @@ export default class FAQs extends Component {
           <ul className={`faq-list`}>
             {data.allContentfulFaq.edges.map((item, index) => {
               return (
-                <li key={"faq-" + index} className="item" id={"faq-" + index}>
+                <li key={"faq-" + index} className="item">
+                  <span className="anchor-link" id={"faq-" + index}></span>
                   <div className="inner">
                     <div className="faq">
                       <h3 className="question">
@@ -66,6 +68,9 @@ export default class FAQs extends Component {
                             __html: item.node.ans.childMarkdownRemark.html,
                           }}
                         />
+                        <a href="#faq-top" className="back-to-top">
+                          Back to top <span></span>
+                        </a>
                         {index !== data.allContentfulFaq.edges.length - 1 && (
                           <span className="divider"></span>
                         )}
