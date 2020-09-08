@@ -12,7 +12,7 @@ export default class Services extends Component {
     return (
       <Layout active="services">
         <SEO
-          title={data.allContentfulPages.nodes[0].page}
+          title={data.allContentfulPages.nodes[0].title}
           keywords={data.allContentfulPages.nodes[0].seo.keywords}
           description={data.allContentfulPages.nodes[0].seo.description}
         />
@@ -176,6 +176,7 @@ export const pageQuery = graphql`
         seo {
           ... on ContentfulSeo {
             keywords
+            title
             description
           }
         }

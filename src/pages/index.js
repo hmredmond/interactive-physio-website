@@ -16,7 +16,7 @@ import Pricing from "../components/pricing";
 const IndexPage = ({ data }) => (
   <Layout header="home">
     <SEO
-      title={data.allContentfulSeo.edges[0].node.page}
+      title={data.allContentfulSeo.edges[0].node.title}
       keywords={data.allContentfulSeo.edges[0].node.keywords}
       description={data.allContentfulSeo.edges[0].node.description}
     />
@@ -261,6 +261,7 @@ export const pageQuery = graphql`
         node {
           description
           page
+          title
           keywords
         }
       }

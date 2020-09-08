@@ -11,7 +11,7 @@ export default class FAQs extends Component {
     return (
       <Layout active="Faqs">
         <SEO
-          title={data.allContentfulPages.nodes[0].page}
+          title={data.allContentfulPages.nodes[0].seo.title}
           keywords={data.allContentfulPages.nodes[0].seo.keywords}
           description={data.allContentfulPages.nodes[0].seo.description}
         />
@@ -158,6 +158,7 @@ export const pageQuery = graphql`
           ... on ContentfulSeo {
             keywords
             description
+            title
           }
         }
       }
