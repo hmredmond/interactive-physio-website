@@ -12,6 +12,7 @@ import Contact from "../components/contact";
 import Faqs from "../components/faqs";
 import About from "../components/about";
 import Pricing from "../components/pricing";
+import Blogs from "../components/blogs";
 
 const IndexPage = ({ data }) => (
   <Layout header="home" active="home">
@@ -109,6 +110,13 @@ const IndexPage = ({ data }) => (
           </div>
         );
       })}
+
+    {data.allContentfulBlogs.edges.length > 0 &&
+      data.contentfulSiteInformation.menus
+        .filter((item) => item === "Blogs")
+        .map((t) => {
+          return <Blogs data={data.allContentfulBlogs}></Blogs>;
+        })}
 
     {data.contentfulSiteInformation.menus
       .filter((item) => item === "Contact")
@@ -271,6 +279,33 @@ export const pageQuery = graphql`
       logo {
         file {
           url
+        }
+      }
+    }
+    allContentfulBlogs(
+      limit: 5
+      skip: 1
+      sort: { fields: createdAt, order: DESC }
+    ) {
+      edges {
+        node {
+          title
+          slug
+          featureImage {
+            file {
+              url
+            }
+            fluid(maxWidth: 600) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          createdAt
         }
       }
     }

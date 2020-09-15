@@ -1,0 +1,199 @@
+[
+  {
+    "ts": "2020-09-15T10:08:19.269Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "j2xr2f1tr781"
+            }
+          },
+          "id": "5OfRJZrY03VRu344bTJsne",
+          "type": "Asset",
+          "createdAt": "2020-09-03T08:18:26.329Z",
+          "updatedAt": "2020-09-15T10:06:37.217Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 23,
+          "publishedAt": "2020-09-09T09:18:30.315Z",
+          "firstPublishedAt": "2020-09-03T08:18:56.565Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          },
+          "publishedCounter": 7,
+          "version": 26,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "policies"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/j2xr2f1tr781/5OfRJZrY03VRu344bTJsne/a894efc1ee202bb75295b7dbf2e7f22a/scott-graham-OQMZwNd3ThU-unsplash.jpg",
+              "details": {
+                "size": 112522,
+                "image": {
+                  "width": 1217,
+                  "height": 549
+                }
+              },
+              "fileName": "scott-graham-OQMZwNd3ThU-unsplash.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "assets/5OfRJZrY03VRu344bTJsne/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/1.4.17; feature space-import; sdk contentful-management.js/6.0.3; platform node.js/v10.15.0; os macOS/19.6.0;",
+            "Authorization": "Bearer ..._-jxk",
+            "user-agent": "node.js/v10.15.0",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 26
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "eb8d195b4abe9845d022729ee8af36cf"
+      }
+    }
+  },
+  {
+    "ts": "2020-09-15T10:08:26.671Z",
+    "level": "error",
+    "error": {
+      "name": "VersionMismatch",
+      "entity": {
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "j2xr2f1tr781"
+            }
+          },
+          "id": "5OfRJZrY03VRu344bTJsne",
+          "type": "Asset",
+          "createdAt": "2020-09-03T08:18:26.329Z",
+          "updatedAt": "2020-09-15T10:06:37.217Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "publishedVersion": 23,
+          "publishedAt": "2020-09-09T09:18:30.315Z",
+          "firstPublishedAt": "2020-09-03T08:18:56.565Z",
+          "createdBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          },
+          "updatedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          },
+          "publishedCounter": 7,
+          "version": 26,
+          "publishedBy": {
+            "sys": {
+              "type": "Link",
+              "linkType": "User",
+              "id": "0SOMroktuhfdVo0dnhGhvc"
+            }
+          }
+        },
+        "fields": {
+          "title": {
+            "en-US": "policies"
+          },
+          "file": {
+            "en-US": {
+              "url": "//images.ctfassets.net/j2xr2f1tr781/5OfRJZrY03VRu344bTJsne/a894efc1ee202bb75295b7dbf2e7f22a/scott-graham-OQMZwNd3ThU-unsplash.jpg",
+              "details": {
+                "size": 112522,
+                "image": {
+                  "width": 1217,
+                  "height": 549
+                }
+              },
+              "fileName": "scott-graham-OQMZwNd3ThU-unsplash.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        }
+      },
+      "data": {
+        "status": 409,
+        "statusText": "Conflict",
+        "message": "",
+        "details": {
+        },
+        "request": {
+          "url": "assets/5OfRJZrY03VRu344bTJsne/published",
+          "headers": {
+            "Accept": "application/json, text/plain, */*",
+            "Content-Type": "application/vnd.contentful.management.v1+json",
+            "X-Contentful-User-Agent": "app contentful.cli/1.4.17; feature space-import; sdk contentful-management.js/6.0.3; platform node.js/v10.15.0; os macOS/19.6.0;",
+            "Authorization": "Bearer ..._-jxk",
+            "user-agent": "node.js/v10.15.0",
+            "Accept-Encoding": "gzip",
+            "X-Contentful-Version": 26
+          },
+          "method": "put",
+          "payloadData": null
+        },
+        "requestId": "ee4f153e25f2299e6a943620dfd82314"
+      }
+    }
+  },
+  {
+    "ts": "2020-09-15T10:08:26.671Z",
+    "level": "error",
+    "error": "Could not publish the following entities: policies (5OfRJZrY03VRu344bTJsne)"
+  }
+]

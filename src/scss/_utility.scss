@@ -43,3 +43,21 @@ ul li.task-list-item:before {
   content: "\2714\0020";
   color: var(--ired);
 }
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0 0 20px 0;
+  list-style: none;
+  display: flex;
+
+  li {
+    padding-right: 5px;
+    color: #ccc;
+    &:last-child {
+      color: #666;
+    }
+    a {
+      padding-right: 5px;
+    }
+  }
+}
