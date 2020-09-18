@@ -72,13 +72,15 @@ export default class footer extends Component {
         </section>
 
         <section className="copyright container">
-          <div className="policies-link">
+          <span className="policies-link left">
             <a href="/privacy">Privacy Policy</a>
             <a href="/data">Data Protection Policy</a>
-          </div>
-          <span className="left">Diana Designs</span>
+          </span>
           <span>&copy;{this.props.siteName} 2020</span>
-          <span>HansUp</span>
+          <span>
+            Site Design by{" "}
+            <a href="mailto:dianad@colorbitor.com">Diana Dumitrescu</a>
+          </span>
         </section>
       </div>
     );
