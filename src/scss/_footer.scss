@@ -30,6 +30,8 @@
   display: block;
   padding-bottom: 20px;
   padding-right: 20px;
+
+  display: flex;
   a {
     color: #fff;
     font-weight: 300;
@@ -111,4 +113,10 @@
 }
 .site-footer .connect h4 span:last-child {
   font-weight: 400;
+}
+
+@media only screen and (max-width: 991px) {
+  .policies-link {
+    flex-direction: column;
+  }
 }
