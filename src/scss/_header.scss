@@ -46,6 +46,7 @@
   overflow: hidden;
   text-decoration: none;
 }
+
 .site-header .header-main .menu ul li a:after {
   content: "";
   width: 0;
@@ -56,9 +57,14 @@
   background: var(--ired);
   transition: 0.5s all;
 }
-.site-header .header-main .menu ul li a:hover:after {
-  width: 100%;
-  transition: 0.5s all;
+.site-header .header-main .menu ul li {
+  a:hover,
+  a.active {
+    &:after {
+      width: 100%;
+      transition: 0.5s all;
+    }
+  }
 }
 
 .responsive-menu {

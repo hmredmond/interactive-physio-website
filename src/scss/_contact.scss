@@ -9,7 +9,6 @@
 .contact-info .contact-phone {
   flex: 1;
   text-align: right;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -17,12 +16,11 @@
 .contact-info .contact-email {
   text-align: left;
   flex: 1;
-  height: 40px;
   display: flex;
   align-items: center;
 }
 .contact-info div {
-  padding: 40px 30px 20px;
+  padding: 30px 30px 0px;
 }
 .contact-info i {
   font-size: 2rem;
@@ -71,7 +69,7 @@
     align-items: center;
   }
   .contact-info div {
-    padding: 10px 5px 0px;
+    padding: 30px 5px 0px;
   }
 }
 

@@ -14,7 +14,7 @@ import About from "../components/about";
 import Pricing from "../components/pricing";
 
 const IndexPage = ({ data }) => (
-  <Layout header="home">
+  <Layout header="home" active="home">
     <SEO
       title={data.allContentfulSeo.edges[0].node.title}
       keywords={data.allContentfulSeo.edges[0].node.keywords}
