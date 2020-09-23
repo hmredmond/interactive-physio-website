@@ -30,7 +30,6 @@
   display: block;
   padding-bottom: 20px;
   padding-right: 20px;
-
   display: flex;
   a {
     color: #fff;
@@ -114,6 +113,28 @@
 .site-footer .connect h4 span:last-child {
   font-weight: 400;
 }
+
+
+@media only screen and (max-width: 767px) {
+  .site-footer .copyright {
+    flex-direction: column;
+    span:first-child,
+    span:last-child,
+    span,
+    .policies-link {
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      a {
+        padding: 0;
+      }
+    }
+    span:last-child {
+      padding-top: 10px;
+    }
+  }
+}
+
 
 @media only screen and (max-width: 991px) {
   .policies-link {
