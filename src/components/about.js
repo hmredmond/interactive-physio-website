@@ -27,12 +27,14 @@ export default class About extends Component {
                     data.childContentfulPagesDescriptionTextNode.description,
                 }}
               ></div>
+
+              <div className="see-more">
+                <Link to="/about">
+                  <span>Meet the team</span>
+                </Link>
+              </div>
             </div>
-            <div className="see-more">
-              <Link to="/about">
-                <span>Meet the team</span>
-              </Link>
-            </div>
+            <div className="see-more"></div>
           </div>
         </div>
       </div>

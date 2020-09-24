@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
   // require("smooth-scroll")('a[href*="#"]');
 }
 
-const Layout = ({ children, header }) => (
+const Layout = ({ children, header, active }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -53,6 +53,7 @@ const Layout = ({ children, header }) => (
           data={data.contentfulSiteInformation}
           siteTitle={data.contentfulSiteInformation.siteName}
           header={header}
+          active={active}
         />
         <div>
           <main>{children}</main>

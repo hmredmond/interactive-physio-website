@@ -25,14 +25,8 @@
   border-width: 0;
 }
 
-.faq .layout {
-  display: flex;
-  margin-bottom: 30px;
-  align-items: flex-end;
-}
 .faq .see-more {
-  width: 460px;
-  margin-left: 30px;
+  padding-top: 20px;
 }
 
 .faqs-page .question-mark {
@@ -64,11 +58,11 @@
   margin-bottom: 2rem;
 }
 
-ul.faq-question-list {
+ul.internal-links-list {
   padding-left: 20px;
-  margin-bottom: 40px;
   list-style: square;
   line-height: 3rem;
+  margin-bottom: 0;
 }
 
 .anchor-link {

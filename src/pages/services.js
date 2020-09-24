@@ -23,18 +23,12 @@ export default class Services extends Component {
           page={data.allContentfulPages.nodes[0]}
         ></Banner>
 
-        <div className="container services-page" id="services">
-          <div
-            className="hide-in-desktop page-introduction"
-            dangerouslySetInnerHTML={{
-              __html:
-                data.allContentfulPages.nodes[0].description.childMarkdownRemark
-                  .html,
-            }}
-          />
-
-          <section>
-            <ul className="internal-links">
+        <section className="internal-links">
+          <div className="container">
+            <h4>
+              Jump to one of our <span>Services</span>:
+            </h4>
+            <ul className="internal-links-list">
               {data.allContentfulService.edges.map((item, index) => {
                 const ref = item.node.title.split(" ").join("_");
                 return (
@@ -44,7 +38,18 @@ export default class Services extends Component {
                 );
               })}
             </ul>
-          </section>
+          </div>
+        </section>
+
+        <div className="container services-page" id="services">
+          <div
+            className="hide-in-desktop page-introduction"
+            dangerouslySetInnerHTML={{
+              __html:
+                data.allContentfulPages.nodes[0].description.childMarkdownRemark
+                  .html,
+            }}
+          />
 
           {data.allContentfulService.edges.map((item, index) => {
             const ref = item.node.title.split(" ").join("_");

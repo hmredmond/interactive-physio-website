@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React, { Component } from "react";
+import classnames from "classnames";
 
 export default class Header extends Component {
   constructor(props) {
@@ -48,14 +49,26 @@ export default class Header extends Component {
                   }}
                 >
                   <li key="home">
-                    <Link to="/#home">Home</Link>
+                    <Link
+                      to="/#home"
+                      className={classnames({ active: active === "home" })}
+                    >
+                      Home
+                    </Link>
                   </li>
                   {data.menus
                     .filter((item) => item === "Service")
                     .map((t) => {
                       return (
                         <li key="service">
-                          <Link to={`/services`}>Services</Link>
+                          <Link
+                            to={`/services`}
+                            className={classnames({
+                              active: active === "services",
+                            })}
+                          >
+                            Services
+                          </Link>
                         </li>
                       );
                     })}
@@ -65,12 +78,19 @@ export default class Header extends Component {
                     .map((t) => {
                       return (
                         <li key="about">
-                          <Link to={`/about`}>Who We Are</Link>
+                          <Link
+                            to={`/about`}
+                            className={classnames({
+                              active: active === "about",
+                            })}
+                          >
+                            Who We Are
+                          </Link>
                         </li>
                       );
                     })}
 
-                  {data.menus
+                  {/* {data.menus
                     .filter((item) => item === "Testimonials")
                     .map((t) => {
                       return (
@@ -78,13 +98,20 @@ export default class Header extends Component {
                           <Link to={`/#Testimonials`}>Testimonials</Link>
                         </li>
                       );
-                    })}
+                    })} */}
                   {data.menus
                     .filter((item) => item === "Faqs")
                     .map((t) => {
                       return (
                         <li key="faq">
-                          <Link to={`/faqs`}>FAQs</Link>
+                          <Link
+                            to={`/faqs`}
+                            className={classnames({
+                              active: active === "faqs",
+                            })}
+                          >
+                            FAQs
+                          </Link>
                         </li>
                       );
                     })}

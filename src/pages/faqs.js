@@ -9,7 +9,7 @@ export default class FAQs extends Component {
   render() {
     const { data } = this.props;
     return (
-      <Layout active="Faqs">
+      <Layout active="faqs">
         <SEO
           title={data.allContentfulPages.nodes[0].seo.title}
           keywords={data.allContentfulPages.nodes[0].seo.keywords}
@@ -22,7 +22,30 @@ export default class FAQs extends Component {
           main={false}
           page={data.allContentfulPages.nodes[0]}
         ></Banner>
-
+        <section className="internal-links">
+          <div className="container">
+            <h4>
+              Jump to one of our <span>FAQs</span>:
+            </h4>
+            <ul className={`internal-links-list`}>
+              {data.allContentfulFaq.edges.map((item, index) => {
+                return (
+                  <li key={"faq-" + index} className="item">
+                    <div className="inner">
+                      <div className="faq">
+                        <span className="question">
+                          <div>
+                            <a href={"#faq-" + index}>{item.node.question}</a>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
         <div className="container faqs-page" id="FAQs">
           <div
             className="hide-in-desktop page-introduction"
@@ -32,24 +55,6 @@ export default class FAQs extends Component {
                   .html,
             }}
           />
-
-          <ul className={`faq-question-list`}>
-            {data.allContentfulFaq.edges.map((item, index) => {
-              return (
-                <li key={"faq-" + index} className="item">
-                  <div className="inner">
-                    <div className="faq">
-                      <span className="question">
-                        <div>
-                          <a href={"#faq-" + index}>{item.node.question}</a>
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
 
           <ul className={`faq-list`}>
             {data.allContentfulFaq.edges.map((item, index) => {
