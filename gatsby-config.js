@@ -1,10 +1,12 @@
-const dotenv = require("dotenv");
+const dotenv = require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
-if (process.env.ENVIRONMENT !== "production") {
-  dotenv.config();
-}
+// if (process.env.ENVIRONMENT !== "production") {
+//   dotenv.config();
+// }
 
-const { spaceId, accessToken } = process.env;
+const { spaceId, accessToken, googleTrackingId } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -28,7 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-177384334-1",
+        trackingId: googleTrackingId,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional

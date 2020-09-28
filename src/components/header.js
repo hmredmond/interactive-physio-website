@@ -11,7 +11,7 @@ export default class Header extends Component {
   }
 
   render() {
-    const { data, header, active } = this.props;
+    const { data, header, active, hasBlogs } = this.props;
     const { menu } = this.state;
 
     return (
@@ -90,15 +90,6 @@ export default class Header extends Component {
                       );
                     })}
 
-                  {/* {data.menus
-                    .filter((item) => item === "Testimonials")
-                    .map((t) => {
-                      return (
-                        <li key="testimonials">
-                          <Link to={`/#Testimonials`}>Testimonials</Link>
-                        </li>
-                      );
-                    })} */}
                   {data.menus
                     .filter((item) => item === "Faqs")
                     .map((t) => {
@@ -115,6 +106,16 @@ export default class Header extends Component {
                         </li>
                       );
                     })}
+                  {hasBlogs &&
+                    data.menus
+                      .filter((item) => item === "Blogs")
+                      .map((t) => {
+                        return (
+                          <li key="blogs">
+                            <Link to={`/blogs`}>Blogs</Link>
+                          </li>
+                        );
+                      })}
 
                   {data.menus
                     .filter((item) => item === "Contact")

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import classNames from "classnames";
+import moment from "moment";
+
 export default class Banner extends Component {
   render() {
     const { data, site, page } = this.props;
@@ -10,7 +12,11 @@ export default class Banner extends Component {
       <div className={classNames("banner", { secondary: !isMain })} id="home">
         <img
           className="full"
-          alt={page.bannerImage.description}
+          alt={
+            page.bannerImage.description
+              ? page.bannerImage.description
+              : "Feature Image"
+          }
           src={page.bannerImage.file.url}
         />
 
@@ -48,7 +54,7 @@ export default class Banner extends Component {
                 <h1>
                   {page.pageTitle &&
                     page.pageTitle.split(" ").map((word, i, arr) => {
-                      if (arr.length - 1 === i) {
+                      if (arr.length - 1 === i && arr.length > 1) {
                         return <span key={word}>{word}</span>;
                       } else {
                         return word + " ";
@@ -56,7 +62,13 @@ export default class Banner extends Component {
                     })}
                 </h1>
                 <span className="horizontal-line"></span>
-                {showSummary && (
+
+                {page.dateCreated && (
+                  <div className="hide-in-mobile light">
+                    Published: {moment(page.dateCreated).format("LL")}
+                  </div>
+                )}
+                {showSummary && page.description && !page.dateCreated && (
                   <div
                     className="hide-in-mobile"
                     dangerouslySetInnerHTML={{

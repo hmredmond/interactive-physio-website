@@ -1,0 +1,50 @@
+.post-social {
+  margin-bottom: 40px;
+}
+.post-social button {
+  text-decoration: none;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--ired) !important;
+  color: #333 !important;
+  position: relative;
+  overflow: hidden;
+  padding: 8px 20px !important;
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 10px;
+  border-radius: 30px;
+}
+.post-social button:after {
+  content: "";
+  background: var(--ired);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+.post-social button:hover:after {
+  top: 0;
+}
+.post-social button span {
+  position: relative;
+  z-index: 1;
+}
+.post-social button:hover span {
+  color: #fff;
+}
+.post-social button span.icon {
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 568px) {
+  .post-social button {
+    margin-bottom: 10px;
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+  }
+}

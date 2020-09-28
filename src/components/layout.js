@@ -45,6 +45,18 @@ const Layout = ({ children, header, active }) => (
           }
           menus
         }
+
+        allContentfulBlogs(
+          limit: 5
+          skip: 1
+          sort: { fields: createdAt, order: DESC }
+        ) {
+          edges {
+            node {
+              title
+            }
+          }
+        }
       }
     `}
     render={(data) => (
@@ -54,6 +66,7 @@ const Layout = ({ children, header, active }) => (
           siteTitle={data.contentfulSiteInformation.siteName}
           header={header}
           active={active}
+          hasBlogs={data.allContentfulBlogs.edges.length > 0}
         />
         <div>
           <main>{children}</main>
