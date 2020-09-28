@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import Img from "gatsby-image";
 
 var settings = {
   dots: true,
@@ -28,6 +27,7 @@ export default class Testimonial extends Component {
                   <div className="testi-inner">
                     <img
                       className="avatar"
+                      alt={item.node.name}
                       src={item.node.avatarImage.file.url}
                     />
                     <h4>{item.node.subTitle}</h4>

@@ -41,6 +41,7 @@ export default class blogPost extends Component {
                 page: "blog-post",
                 pageTitle: data.title,
                 dateCreated: data.createdAt,
+                author: data.author,
               }}
             ></Banner>
           ) : (
@@ -54,6 +55,9 @@ export default class blogPost extends Component {
                 homepage={true}
               ></Breadcrumbs>
               <div className="hide-in-desktop page-introduction">
+                <div className="blog-author">
+                  Author: <span className="light">{data.author}</span>
+                </div>
                 <span className="light">
                   Published {moment(data.createdAt).format("LL")}
                 </span>
@@ -97,6 +101,7 @@ export const pageQuery = graphql`
       id
       title
       slug
+      author
       featureImage {
         file {
           url

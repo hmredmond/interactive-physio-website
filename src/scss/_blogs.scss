@@ -3,7 +3,11 @@
     margin: 60px 0;
   }
 }
-
+.blog-author {
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.6rem;
+}
 .blogs-list {
   display: flex;
   flex-wrap: wrap;
@@ -96,5 +100,11 @@
 .blog-post {
   .details {
     padding: 30px 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .blog-author {
+    padding-bottom: 0;
   }
 }
