@@ -122,7 +122,10 @@ export const pageQuery = graphql`
       }
     }
 
-    allContentfulBlogs(skip: 1, sort: { fields: createdAt, order: DESC }) {
+    allContentfulBlogs(
+      filter: { slug: { ne: "dummy_blog" } }
+      sort: { fields: createdAt, order: DESC }
+    ) {
       edges {
         node {
           title

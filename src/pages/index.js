@@ -284,7 +284,7 @@ export const pageQuery = graphql`
     }
     allContentfulBlogs(
       limit: 5
-      skip: 1
+      filter: { slug: { ne: "dummy_blog" } }
       sort: { fields: createdAt, order: DESC }
     ) {
       edges {
