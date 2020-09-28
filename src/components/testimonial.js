@@ -26,11 +26,9 @@ export default class Testimonial extends Component {
               return (
                 <div key={item + "-" + index} className="testimonials-item">
                   <div className="testi-inner">
-                    <Img
+                    <img
                       className="avatar"
-                      fixed={item.node.avatarImage.fluid}
-                      objectFit="cover"
-                      objectPosition="50% 50%"
+                      src={item.node.avatarImage.file.url}
                     />
                     <h4>{item.node.subTitle}</h4>
                     <div className="quote-box">

@@ -231,6 +231,7 @@ export const pageQuery = graphql`
           order
           forHealthCareProfessionals
           icon {
+            title
             file {
               url
             }
@@ -250,6 +251,9 @@ export const pageQuery = graphql`
             }
           }
           avatarImage {
+            file {
+              url
+            }
             fluid(maxWidth: 200) {
               base64
               aspectRatio

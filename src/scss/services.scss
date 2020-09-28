@@ -52,9 +52,10 @@
   font-style: italic;
   padding: 2px;
 }
-.service-main .watermark object {
+.service-main .watermark .svg {
   height: 125px;
   width: 125px;
+  display: inline-block;
 }
 
 .service-main .icon {

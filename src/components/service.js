@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import SvgIcon from "./svgIcon";
 
 import classNames from "classnames";
 
@@ -41,24 +42,16 @@ export default class service extends Component {
                     >
                       {item.node.icon && (
                         <div className="watermark">
-                          <object
-                            type="image/svg+xml"
-                            data={item.node.icon.file.url}
-                            className="icon"
-                          >
-                            {item.node.title} icon
-                          </object>
+                          <span className="svg">
+                            <SvgIcon iconName={item.node.icon.title} />
+                          </span>
                         </div>
                       )}
                       <div className="service-header">
                         {item.node.icon && (
-                          <object
-                            type="image/svg+xml"
-                            data={item.node.icon.file.url}
-                            className="icon"
-                          >
-                            {item.node.title} icon
-                          </object>
+                          <span className="icon">
+                            <SvgIcon iconName={item.node.icon.title} />
+                          </span>
                         )}
                         <h4>
                           {item.node.title.split(" ").map((item, index) => {
