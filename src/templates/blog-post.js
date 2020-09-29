@@ -12,7 +12,7 @@ export default class blogPost extends Component {
   render() {
     const data = this.props.data.contentfulBlogs;
 
-    const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
+    const siteurl = this.props.data.contentfulSiteInformation.siteUrl;
     const twiteerhandle = this.props.data.contentfulSiteInformation
       .twiteerHandle;
     const socialConfigss = {
