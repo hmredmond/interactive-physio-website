@@ -108,3 +108,15 @@
     padding-bottom: 0;
   }
 }
+
+@media only screen and (max-width: 568px) {
+  .blogs-list .item {
+    width: 100% !important;
+  }
+  .blogs-list .item .inner .details .date {
+    font-size: 12px;
+  }
+  .blogs-list .item .inner .details .title {
+    font-size: 20px;
+  }
+}

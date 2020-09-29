@@ -62,9 +62,12 @@ export default class Banner extends Component {
                     })}
                 </h1>
                 <span className="horizontal-line"></span>
-                <div className="blog-author hide-in-mobile light">
-                  Author: {page.author}
-                </div>
+
+                {page.author && (
+                  <div className="blog-author hide-in-mobile light">
+                    Author: {page.author}
+                  </div>
+                )}
                 {page.dateCreated && (
                   <div className="hide-in-mobile light">
                     Published: {moment(page.dateCreated).format("LL")}

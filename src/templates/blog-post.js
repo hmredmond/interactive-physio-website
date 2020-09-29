@@ -20,7 +20,7 @@ export default class blogPost extends Component {
         siteMetadata: { siteurl, twiteerhandle },
       },
       title: data.title,
-      slug: data.slug,
+      slug: escape(data.slug),
     };
 
     return (
