@@ -13,6 +13,7 @@ import Faqs from "../components/faqs";
 import About from "../components/about";
 import Pricing from "../components/pricing";
 import Blogs from "../components/blogs";
+import Photos from "../components/photos";
 
 const IndexPage = ({ data }) => (
   <Layout header="home" active="home">
@@ -118,6 +119,11 @@ const IndexPage = ({ data }) => (
           return <Blogs data={data.allContentfulBlogs}></Blogs>;
         })}
 
+    {data.contentfulSiteInformation.menus
+      .filter((item) => item === "Photos")
+      .map((t) => {
+        return <Photos data={data.contentfulPhotos}></Photos>;
+      })}
     {data.contentfulSiteInformation.menus
       .filter((item) => item === "Contact")
       .map((t) => {
@@ -283,6 +289,35 @@ export const pageQuery = graphql`
       logo {
         file {
           url
+        }
+      }
+    }
+    contentfulPhotos {
+      photos {
+        fixed(
+          quality: 10
+          resizingBehavior: FILL
+          toFormat: JPG
+          height: 250
+          width: 300
+        ) {
+          aspectRatio
+          base64
+          height
+          src
+          srcSet
+          srcSetWebp
+          srcWebp
+          width
+        }
+        fluid(maxWidth: 600) {
+          base64
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
         }
       }
     }

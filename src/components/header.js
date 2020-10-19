@@ -149,6 +149,15 @@ export default class Header extends Component {
                         </li>
                       );
                     })}
+                  {data.menus
+                    .filter((item) => item === "Photos")
+                    .map((t) => {
+                      return (
+                        <li key="photos">
+                          <Link to="/photos">Photos</Link>
+                        </li>
+                      );
+                    })}
                 </ul>
               </div>
             )}

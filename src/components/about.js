@@ -34,7 +34,7 @@ export default class About extends Component {
                 </Link>
               </div>
             </div>
-            <div className="see-more"></div>
+            <div className="image-placeholder"></div>
           </div>
         </div>
       </div>
