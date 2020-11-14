@@ -76,6 +76,12 @@ const Layout = ({ children, header, active }) => (
           data={data.contentfulAboutMe}
           site={data.contentfulIds}
         />
+        {/* <!-- Panelbear Analytics - We respect your privacy --> */}
+<script async src="https://cdn.panelbear.com/analytics.js?site=AT4QNI6l1CV"></script>
+<script>
+    window.panelbear = window.panelbear || function(){ window.panelbearQ = window.panelbearQ || []; panelbearQ.push(arguments); };
+    panelbear('config', { site: 'AT4QNI6l1CV' });
+</script> 
       </>
     )}
   />
