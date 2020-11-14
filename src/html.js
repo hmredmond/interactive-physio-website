@@ -23,13 +23,15 @@ export default function HTML(props) {
         {props.postBodyComponents}
 
         <script
+          async
+          src="https://cdn.panelbear.com/analytics.js?site=AT4QNI6l1CV"
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `
-          <script async src="https://cdn.panelbear.com/analytics.js?site=AT4QNI6l1CV"></script>
-          <script>
               window.panelbear = window.panelbear || function(){ window.panelbearQ = window.panelbearQ || []; panelbearQ.push(arguments); };
               panelbear('config', { site: 'AT4QNI6l1CV' });
-          </script>`,
+          `,
           }}
         />
       </body>
