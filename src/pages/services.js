@@ -79,7 +79,7 @@ export default class Services extends Component {
         </div>
 
         {data.contentfulSiteInformation.menus
-          .filter((item) => item === "Pricing")
+          .filter((item) => item === "_Pricing")
           .map((t) => {
             return (
               <div className="services-pricing" key="pricing-section">

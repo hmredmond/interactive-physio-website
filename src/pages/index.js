@@ -97,7 +97,7 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "Pricing")
+      .filter((item) => item === "_Pricing")
       .map((t) => {
         return (
           <div key="pricing-section">
