@@ -1,18 +1,19 @@
-import React from "react";
-import { graphql } from "gatsby";
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import Banner from "../components/banner";
-import Service from "../components/service";
+import Banner from '../components/banner';
+import Service from '../components/service';
+import wiihab from '../components/wiihab';
 
-import Testimonial from "../components/testimonial";
-import Contact from "../components/contact";
-import Faqs from "../components/faqs";
-import About from "../components/about";
-import Pricing from "../components/pricing";
-import Blogs from "../components/blogs";
+import Testimonial from '../components/testimonial';
+import Contact from '../components/contact';
+import Faqs from '../components/faqs';
+import About from '../components/about';
+import Pricing from '../components/pricing';
+import Blogs from '../components/blogs';
 
 const IndexPage = ({ data }) => (
   <Layout header="home" active="home">
@@ -28,7 +29,7 @@ const IndexPage = ({ data }) => (
     ></Banner>
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "Service")
+      .filter((item) => item === 'Service')
       .map((t) => {
         return (
           <Service
@@ -40,7 +41,7 @@ const IndexPage = ({ data }) => (
                   return x.node;
                 })
                 .filter(function(v) {
-                  return v.page === "Services";
+                  return v.page === 'Services';
                 })[0]
             }
           ></Service>
@@ -48,7 +49,27 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "About")
+      .filter((item) => item === 'WiiHab')
+      .map((t) => {
+        return (
+          <Service
+            key="WiiHab-section"
+            data={data.allContentfulService}
+            page={
+              data.allContentfulPages.edges
+                .map(function(x) {
+                  return x.node;
+                })
+                .filter(function(v) {
+                  return v.page === 'WiiHabilitation';
+                })[0]
+            }
+          ></Service>
+        );
+      })}
+
+    {data.contentfulSiteInformation.menus
+      .filter((item) => item === 'About')
       .map((t) => {
         return (
           <About
@@ -59,7 +80,7 @@ const IndexPage = ({ data }) => (
                   return x.node;
                 })
                 .filter(function(v) {
-                  return v.page === "About";
+                  return v.page === 'About';
                 })[0]
             }
           ></About>
@@ -67,7 +88,7 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "Testimonials")
+      .filter((item) => item === 'Testimonials')
       .map((t) => {
         return (
           <Testimonial
@@ -78,7 +99,7 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "Faqs")
+      .filter((item) => item === 'Faqs')
       .map((t) => {
         return (
           <Faqs
@@ -89,7 +110,7 @@ const IndexPage = ({ data }) => (
                   return x.node;
                 })
                 .filter(function(v) {
-                  return v.page === "Faqs";
+                  return v.page === 'Faqs';
                 })[0]
             }
           ></Faqs>
@@ -97,7 +118,7 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "_Pricing")
+      .filter((item) => item === '_Pricing')
       .map((t) => {
         return (
           <div key="pricing-section">
@@ -113,13 +134,13 @@ const IndexPage = ({ data }) => (
 
     {data.allContentfulBlogs.edges.length > 0 &&
       data.contentfulSiteInformation.menus
-        .filter((item) => item === "Blogs")
+        .filter((item) => item === 'Blogs')
         .map((t) => {
           return <Blogs data={data.allContentfulBlogs}></Blogs>;
         })}
 
     {data.contentfulSiteInformation.menus
-      .filter((item) => item === "Contact")
+      .filter((item) => item === 'Contact')
       .map((t) => {
         return (
           <Contact
@@ -131,7 +152,7 @@ const IndexPage = ({ data }) => (
                   return x.node;
                 })
                 .filter(function(v) {
-                  return v.page === "Contact";
+                  return v.page === 'Contact';
                 })[0]
             }
           ></Contact>
