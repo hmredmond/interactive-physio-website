@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { graphql } from "gatsby";
+import React, { Component } from 'react';
+import { graphql } from 'gatsby';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Banner from "../components/banner";
-import Pricing from "../components/pricing";
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Banner from '../components/banner';
+import Pricing from '../components/pricing';
 
 export default class Services extends Component {
   render() {
@@ -25,15 +25,13 @@ export default class Services extends Component {
 
         <section className="internal-links">
           <div className="container">
-            <h4>
-              Jump to one of our <span>Services</span>:
-            </h4>
+            <h4>Jump to:</h4>
             <ul className="internal-links-list">
               {data.allContentfulService.edges.map((item, index) => {
-                const ref = item.node.title.split(" ").join("_");
+                const ref = item.node.title.split(' ').join('_');
                 return (
                   <li key={ref}>
-                    <a href={"#" + ref}>{item.node.title}</a>
+                    <a href={'#' + ref}>{item.node.title}</a>
                   </li>
                 );
               })}
@@ -52,13 +50,13 @@ export default class Services extends Component {
           />
 
           {data.allContentfulService.edges.map((item, index) => {
-            const ref = item.node.title.split(" ").join("_");
+            const ref = item.node.title.split(' ').join('_');
             return (
               <section key={ref}>
                 <span id={ref} className="link-anchor"></span>
                 <h2>
-                  {item.node.title.split(" ").map((item, index) => {
-                    return <span key={item + "-" + index}>{item}</span>;
+                  {item.node.title.split(' ').map((item, index) => {
+                    return <span key={item + '-' + index}>{item}</span>;
                   })}
                 </h2>
 
@@ -79,7 +77,7 @@ export default class Services extends Component {
         </div>
 
         {data.contentfulSiteInformation.menus
-          .filter((item) => item === "_Pricing")
+          .filter((item) => item === '_Pricing')
           .map((t) => {
             return (
               <div className="services-pricing" key="pricing-section">
