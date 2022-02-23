@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class footer extends Component {
   render() {
     const { data } = this.props;
+    console.log(data);
     return (
       <div className="site-footer" id="footer">
         <section className="connect">
@@ -12,6 +13,16 @@ export default class footer extends Component {
             <span>us</span>
           </h4>
           <ul className="social">
+            <li key="social-facebook">
+              <a
+                className="fab fa-facebook"
+                href={data.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="sr-only">Facebook link</span>
+              </a>
+            </li>
             <li key="social-email">
               <a
                 className="far fa-envelope"
@@ -49,7 +60,6 @@ export default class footer extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {" "}
                 <span className="sr-only">linkedIn link</span>
               </a>
             </li>
@@ -64,9 +74,7 @@ export default class footer extends Component {
             <div className="contact-email">
               <i className="far fa-envelope"></i>
 
-              <a href="mailto:hello@interactivephysio.com">
-                hello@interactivephysio.com
-              </a>
+              <a href={`mailto:${data.email}`}>{data.email}</a>
             </div>
           </div>
         </section>
@@ -78,7 +86,7 @@ export default class footer extends Component {
           </span>
           <span>&copy;{this.props.siteName} 2020</span>
           <span>
-            Site Design by{" "}
+            Site Design by{' '}
             <a href="mailto:dianad@colorbitor.com">Diana Dumitrescu</a>
           </span>
         </section>

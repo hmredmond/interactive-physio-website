@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import { Link } from "gatsby";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import SvgIcon from "./svgIcon";
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import SvgIcon from './svgIcon';
 
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export default class service extends Component {
   render() {
     const { data, page } = this.props;
+    console.log('data', data.edges);
     return (
       <div className="service section" id="Service">
         <div className="container">
@@ -23,39 +24,46 @@ export default class service extends Component {
               .sort((a, b) => (a.node.order > b.node.order ? 1 : -1))
               .map((item, index) => {
                 let isProfessional = item.node.forHealthCareProfessionals;
-
                 return (
-                  <div key={item + "-" + index} className="row-item">
+                  <div key={item + '-' + index} className="row-item">
                     <AnchorLink
-                      to={"/services#" + item.node.title.split(" ").join("_")}
+                      to={'/services#' + item.node.title.split(' ').join('_')}
                       className="overlay-link"
                     >
                       <span className="sr-only">
-                        {item.node.title.split(" ").join("_")}
+                        {item.node.title.split(' ').join('_')}
                       </span>
                     </AnchorLink>
 
                     <div
-                      className={classNames("service-main", {
-                        "professional-service": isProfessional,
+                      className={classNames('service-main', {
+                        'professional-service': isProfessional,
                       })}
                     >
                       {item.node.icon && (
                         <div className="watermark">
                           <span className="svg">
-                            <SvgIcon iconName={item.node.icon.title} />
+                            <img
+                              src={item.node.icon.file.url}
+                              alt={item.node.icon.title}
+                            />
+                            {/* <SvgIcon iconName={item.node.icon.title} /> */}
                           </span>
                         </div>
                       )}
                       <div className="service-header">
                         {item.node.icon && (
                           <span className="icon">
-                            <SvgIcon iconName={item.node.icon.title} />
+                            <img
+                              src={item.node.icon.file.url}
+                              alt={item.node.icon.title}
+                            />
+                            {/* <SvgIcon iconName={item.node.icon.title} /> */}
                           </span>
                         )}
                         <h4>
-                          {item.node.title.split(" ").map((item, index) => {
-                            return <span key={item + "-" + index}>{item}</span>;
+                          {item.node.title.split(' ').map((item, index) => {
+                            return <span key={item + '-' + index}>{item}</span>;
                           })}
                         </h4>
                       </div>
@@ -71,10 +79,9 @@ export default class service extends Component {
                 );
               })}
           </div>
-
           <div className="see-more">
             <Link to="/services">
-              <span>Find out about our Services</span>
+              <span>Find out about our Service s</span>
             </Link>
           </div>
         </div>
